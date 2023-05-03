@@ -1,0 +1,5 @@
+create table Categorias (
+   Id int Primary Key Identity(1,1),
+   Nome varchar(50) NOT NULL,
+   Ativo bit NOT NULL
+)
