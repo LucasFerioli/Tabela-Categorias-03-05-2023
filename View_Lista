@@ -1,0 +1,44 @@
+@model IEnumerable<Categoria>
+
+<h1>Lista de Categorias</h1>
+
+<p>
+    <a asp-action="Criar" class="btn btn-primary">Nova Categoria</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Nome
+            </th>
+            <th>
+                Ativo
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var categoria in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => categoria.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => categoria.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => categoria.Ativo)
+                </td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@categoria.Id">Editar</a> |
+                    <a asp-action="Excluir" asp-route-id="@categoria.Id">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
